@@ -1,6 +1,6 @@
 {
   "name": "node-kitsu",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Easily pull data from kitsu.io",
   "main": "main.js",
   "scripts": {
@@ -13,6 +13,13 @@
   ],
   "dependencies": {
     "request": "^2.79.0"
+  },
+  "bugs": {
+    "url": "https://github.com/theconceptionist/node-kitsu/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theconceptionist/node-kitsu.git"
   },
   "author": "The Conceptionist",
   "license": "ISC"
