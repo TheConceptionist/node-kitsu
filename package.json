@@ -1,0 +1,19 @@
+{
+  "name": "node-kitsu",
+  "version": "0.3.1",
+  "description": "Easily pull data from kitsu.io",
+  "main": "main.js",
+  "scripts": {
+    "test": "kekkity"
+  },
+  "keywords": [
+    "kitsu",
+    "anime",
+    "search"
+  ],
+  "dependencies": {
+    "request": "^2.79.0"
+  },
+  "author": "The Conceptionist",
+  "license": "ISC"
+}
