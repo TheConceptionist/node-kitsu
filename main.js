@@ -20,7 +20,7 @@ exports.searchAnime = function(query, callback) {
 
 exports.listAnime = function(offset, callback) {
     if (offset === null || offset === undefined) {
-        offset === 0
+        offset = 0
     }
     request({
         method: 'GET',
@@ -59,7 +59,7 @@ exports.searchManga = function(query, callback) {
 
 exports.listManga = function(offset, callback) {
     if (offset === null || offset === undefined) {
-        offset === 0
+        offset = 0
     }
     request({
         method: 'GET',
@@ -98,7 +98,7 @@ exports.searchDrama = function(query, callback) {
 
 exports.listDrama = function(offset, callback) {
     if (offset === null || offset === undefined) {
-        offset === 0
+        offset = 0
     }
     request({
         method: 'GET',
@@ -119,7 +119,7 @@ exports.listDrama = function(offset, callback) {
 
 exports.listUsers = function(offset, callback) {
     if (offset === null || offset === undefined) {
-        offset === 0
+        offset = 0
     }
     request({
         method: 'GET',
@@ -158,11 +158,32 @@ exports.getUser = function(username, callback) {
 
 exports.listGenres = function(offset, callback) {
     if (offset === null || offset === undefined) {
-        offset === 0
+        offset = 0
     }
     request({
         method: 'GET',
         url: 'https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=' + (offset.toString() ? offset : '0'),
+        headers: {
+            'Content-Type': 'application/vnd.api+json',
+            'Accept': 'application/vnd.api+json'
+        }
+    }, function(error, response, body) {
+        if (error) {
+            callback(error)
+        }
+        var allofit = JSON.parse(body)
+        var results = allofit.data
+        callback(null, results)
+    })
+}
+
+exports.findCharacter = function(name, offset, callback) {
+    if (offset === null || offset === undefined) {
+        offset = 0
+    }
+    request({
+        method: 'GET',
+        url: 'https://kitsu.io/api/edge/characters?filter[name]=' + name + '&page%5Blimit%5D=10&page%5Boffset%5D=' + (offset.toString() ? offset : '0'),
         headers: {
             'Content-Type': 'application/vnd.api+json',
             'Accept': 'application/vnd.api+json'

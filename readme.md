@@ -107,3 +107,14 @@ kitsu.listGenres(0, function(error, results) {
     console.log(results[0])
 });
 ```
+
+`findCharacter(name, offset, [callback])`
+Gets a character's info by name. Returns an array with 10 character objects.
+
+```javascript
+var kitsu = require('node-kitsu');
+
+kitsu.findCharacter("yagami kou new game", 0, function(error, results) {
+    console.log(results[0])
+});
+```
