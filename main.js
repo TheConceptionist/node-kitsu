@@ -1,9 +1,9 @@
 var request = require("request");
 
-exports.searchAnime = function(query, callback) {
+exports.searchAnime = function(query, offset, callback) {
     request({
         method: 'GET',
-        url: 'https://kitsu.io/api/edge/anime?filter[text]=' + query,
+        url: 'https://kitsu.io/api/edge/anime?filter[text]=' + query + '&page%5Boffset%5D=' + (offset.toString() ? offset : '0'),
         headers: {
             'Content-Type': 'application/vnd.api+json',
             'Accept': 'application/vnd.api+json'
@@ -39,10 +39,10 @@ exports.listAnime = function(offset, callback) {
     })
 }
 
-exports.searchManga = function(query, callback) {
+exports.searchManga = function(query, offset, callback) {
     request({
         method: 'GET',
-        url: 'https://kitsu.io/api/edge/manga?filter[text]=' + query,
+        url: 'https://kitsu.io/api/edge/manga?filter[text]=' + query + '&page%5Boffset%5D=' + (offset.toString() ? offset : '0'),
         headers: {
             'Content-Type': 'application/vnd.api+json',
             'Accept': 'application/vnd.api+json'
@@ -78,10 +78,10 @@ exports.listManga = function(offset, callback) {
     })
 }
 
-exports.searchDrama = function(query, callback) {
+exports.searchDrama = function(query, offset, callback) {
     request({
         method: 'GET',
-        url: 'https://kitsu.io/api/edge/drama?filter[text]=' + query,
+        url: 'https://kitsu.io/api/edge/drama?filter[text]=' + query + '&page%5Boffset%5D=' + (offset.toString() ? offset : '0'),
         headers: {
             'Content-Type': 'application/vnd.api+json',
             'Accept': 'application/vnd.api+json'

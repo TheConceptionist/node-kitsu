@@ -5,14 +5,14 @@
 
 Functions:
 
-`searchAnime(query, [callback])`
-Returns an array of anime objects with anime data if found, null otherwise. First object is probably the best fit for the search.
+`searchAnime(query, offset, [callback])`
+Returns an array of anime objects with anime data if found, null otherwise. Ten results per search, you can adjust the results with `offset`. First object is probably the best fit for the search.
 Full anime object can be found [here](http://docs.kitsu17.apiary.io/#reference/media/anime).
 
 ```javascript
 var kitsu = require('node-kitsu');
 
-kitsu.searchAnime('New Game!', function(error, results) {
+kitsu.searchAnime('New Game!', 0, function(error, results) {
     console.log(results[0])
 });
 ```
@@ -29,7 +29,7 @@ kitsu.listAnime(0, function(error, results) {
 ```
 
 `searchManga(query, [callback])`
-Returns an array of manga objects with manga data if found, null otherwise. First object is probably the best fit for the search.
+Returns an array of manga objects with manga data if found, null otherwise. Ten results per search, you can adjust the results with `offset`. First object is probably the best fit for the search.
 Full manga object can be found [here](http://docs.kitsu17.apiary.io/#reference/media/manga).
 
 ```javascript
@@ -52,7 +52,7 @@ kitsu.listManga(0, function(error, results) {
 ```
 
 `searchDrama(query, [callback])`
-Returns an array of drama objects with drama data if found, null otherwise. First object is probably the best fit for the search.
+Returns an array of drama objects with drama data if found, null otherwise. Ten results per search, you can adjust the results with `offset`.  First object is probably the best fit for the search.
 Full drama object can be found [here](http://docs.kitsu17.apiary.io/#reference/media/drama).
 
 ```javascript
