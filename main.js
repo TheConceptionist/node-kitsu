@@ -1,5 +1,7 @@
 var request = require("request");
 
+//0.4 => 1.0, thanks to the guy that pointed it out on GitHub
+
 exports.searchAnime = function(query, offset) {
     return new Promise(function(resolve, reject) {
         request({

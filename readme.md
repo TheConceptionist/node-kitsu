@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/node-kitsu.png)](https://nodei.co/npm/node-kitsu/)
 
-(Note that as of 0.4, node-kitsu now utilizes promises instead of callbacks. If you would like to catch an error in usage, it would look something like `kitsu.searchAnime('example', '0').then(...).catch(/*handle error*/)`.)
+(Note that as of 1.0, node-kitsu now utilizes promises instead of callbacks. If you would like to catch an error in usage, it would look something like `kitsu.searchAnime('example', '0').then(...).catch(/*handle error*/)`.)
 
 Functions:
 
